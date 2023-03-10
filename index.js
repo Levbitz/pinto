@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const { postUser } = require("./routes/usersRoutes");
+const router = require("./routes/usersRoutes");
 
 const app = express();
 const port = 3000;
@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.send("working");
 });
 
-app.use("/api", postUser);
+app.use("/api", router);
 
 app.listen(port, () => {
   console.log(`server running at http://localhost/${port}`);
